@@ -1,6 +1,6 @@
 /* @format */
 
-const config = {
+export const config = {
 	firebaseConfig: {
 		apiKey: 'AIzaSyDD1YQSlXMPqEneR6mYwxeKBfoq5s79Vps',
 		authDomain: 'fir-auth-1132-12dbd.firebaseapp.com',
@@ -11,5 +11,3 @@ const config = {
 		measurementId: 'G-4CR3VFMCWJ',
 	},
 };
-
-export default config;

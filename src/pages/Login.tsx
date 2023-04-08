@@ -1,4 +1,4 @@
-/** @format */
+/* @format */
 
 import {
 	ChakraProvider,
@@ -20,7 +20,30 @@ import {
 	Button,
 } from '@chakra-ui/react';
 import { ColorModeSwitcher } from './ColorModeSwitcher';
+import {
+	getAuth,
+	GoogleAuthProvider,
+	signInWithEmailAndPassword,
+	signInWithPopup,
+} from 'firebase/auth';
+import { useNavigate } from 'react-router-dom';
+import { useState } from 'react';
 const Login = () => {
+	const auth = getAuth();
+	const navigate = useNavigate();
+	const [authing, setauthing] = useState(false);
+	const signInWithGoogle = async () => {
+		setauthing(true);
+		signInWithPopup(auth, new GoogleAuthProvider())
+			.then((response) => {
+				console.log(response.user.uid);
+				navigate('/');
+			})
+			.catch((error) => {
+				console.log(error);
+				setauthing(false);
+			});
+	};
 	return (
 		<ThemeProvider theme={theme}>
 			<ColorModeProvider>
@@ -68,6 +91,10 @@ const LoginHeader = () => {
 };
 
 const LoginForm = () => {
+	function signInWithGoogle(): void {
+		throw new Error('Function not implemented.');
+	}
+
 	return (
 		<ChakraProvider theme={theme}>
 			<Box my={8} textAlign='left'>
@@ -90,7 +117,7 @@ const LoginForm = () => {
 						</Box>
 					</Stack>
 
-					<Button width='full' mt={4}>
+					<Button width='full' mt={4} onClick={() => signInWithGoogle()}>
 						Sign In
 					</Button>
 				</form>
