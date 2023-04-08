@@ -1,7 +1,7 @@
 /* @format */
 
 const config = {
-	firebase: {
+	firebaseConfig: {
 		apiKey: 'AIzaSyDD1YQSlXMPqEneR6mYwxeKBfoq5s79Vps',
 		authDomain: 'fir-auth-1132-12dbd.firebaseapp.com',
 		projectId: 'fir-auth-1132-12dbd',
