@@ -4,7 +4,7 @@ import React from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Home from './pages/Home';
 import Login from './pages/Login';
-import Mentors from './pages/Mentors';
+import Mentors from './pages/mentors';
 
 export interface IApp1icationProps {}
 export const App: React.FunctionComponent<IApp1icationProps> = (props) => {

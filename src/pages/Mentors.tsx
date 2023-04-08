@@ -1,4 +1,4 @@
-/** @format */
+/* @format */
 
 import React from 'react';
 
